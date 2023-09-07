@@ -69,3 +69,11 @@ ReactDOM.render(<div><Post
     text="😂😂🤣🤣"
     postImg="https://scontent.fkhi12-1.fna.fbcdn.net/v/t39.30808-6/345562013_926720715252549_1565968124477695456_n.jpg?stp=dst-jpg_p526x296&_nc_cat=107&ccb=1-7&_nc_sid=49d041&_nc_eui2=AeHS0KF3wx1KUOULw89yj42Y7v3Ry_FHKCfu_dHL8UcoJ7gw1LR0B20eJgoqwsB8JrjUG9F9AcZXRHTtKIS0QX9d&_nc_ohc=qkK7_kgp1NYAX8m4jhU&_nc_ht=scontent.fkhi12-1.fna&oh=00_AfDPm4B8IDdBYxnpyxcy8hC0ZfyAkxU85dYEATwU7AUzsQ&oe=64FEA7AF"
   /> </div>, document.querySelector("#root"));
+
+
+const State = () => {
+  return("hello world")
+}
+
+
+ReactDOM.render(<State />, document.querySelector("#root"))

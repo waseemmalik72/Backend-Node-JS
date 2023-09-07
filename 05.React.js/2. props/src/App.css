@@ -29,7 +29,7 @@
 }
 
 .main-div>.post>.post-header>.profile-img>.my-img {
-  border-radius: 20px;
+  border-radius: 38px;
 }
 
 .main-div>.post>.post-header>.post-info {
@@ -63,7 +63,7 @@
 /* Post Img start here */
 
 .main-div>.post>.post-img {
-  margin-top: 15px;
+  margin: 15px 0;
   display: flex;
   justify-content: center;
 }
