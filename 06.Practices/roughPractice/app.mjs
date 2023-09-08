@@ -59,3 +59,7 @@
 // }
 
 
+// import { addFunc } from './check.mjs'
+
+
+// addFunc()
