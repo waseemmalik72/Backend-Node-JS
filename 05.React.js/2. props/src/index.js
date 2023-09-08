@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import profileImg from './profile.jpg'
 import shaji from './shaji.jpg'
@@ -6,7 +6,7 @@ import imti from './imti.jpg'
 import { HandThumbsUp, ChatLeftText, ShareFill } from 'react-bootstrap-icons';
 import "./App.css";
 
-const Post = ({ img, title, text, postImg }) => {
+const Post = ({ img, title, text, postImg, date }) => {
   return (
     <div className="main-div">
       <div className="post">
@@ -19,7 +19,7 @@ const Post = ({ img, title, text, postImg }) => {
               <h1>{title}</h1>
             </div>
             <div className="post-date">
-              2020-01-01
+              {date}
             </div>
           </div>
         </div>
@@ -52,6 +52,7 @@ const Post = ({ img, title, text, postImg }) => {
 
 ReactDOM.render(<div><Post
   img={profileImg}
+  date="09-08-2023"
   title="Waseem Malik"
   text="Just Funny Post 🤣😂😂🤣
   Don't Be personally"
@@ -59,21 +60,111 @@ ReactDOM.render(<div><Post
 />
   <Post
     img={shaji}
+    date="05-04-2023"
     title="Sharjeel Shah"
     text="🤣🤣🤣🤣😂😂😂"
     postImg="https://scontent.fkhi12-1.fna.fbcdn.net/v/t39.30808-6/363008886_950812119507025_1279358659735326365_n.jpg?stp=dst-jpg_p180x540&_nc_cat=101&ccb=1-7&_nc_sid=49d041&_nc_eui2=AeESDuxIEmNL7FM4WGeJJyloHM-cRuX9_Ugcz5xG5f39SFD4e9bJwjKyvQPA-gdg6aPvfuLoQtglFtgnP-69Jv8I&_nc_ohc=CiaAJo3sBccAX8_RYzA&_nc_ht=scontent.fkhi12-1.fna&oh=00_AfDWwyvrnSWFthCmeUYLrRPT6etXISzELboYbDGfuZEsIg&oe=64FECA9F"
   />
   <Post
     img={imti}
+    date="07-06-2023"
     title="Imtiaz Ali"
     text="😂😂🤣🤣"
     postImg="https://scontent.fkhi12-1.fna.fbcdn.net/v/t39.30808-6/345562013_926720715252549_1565968124477695456_n.jpg?stp=dst-jpg_p526x296&_nc_cat=107&ccb=1-7&_nc_sid=49d041&_nc_eui2=AeHS0KF3wx1KUOULw89yj42Y7v3Ry_FHKCfu_dHL8UcoJ7gw1LR0B20eJgoqwsB8JrjUG9F9AcZXRHTtKIS0QX9d&_nc_ohc=qkK7_kgp1NYAX8m4jhU&_nc_ht=scontent.fkhi12-1.fna&oh=00_AfDPm4B8IDdBYxnpyxcy8hC0ZfyAkxU85dYEATwU7AUzsQ&oe=64FEA7AF"
   /> </div>, document.querySelector("#root"));
 
 
-const State = () => {
-  return("hello world")
+const Counter = () => {
+
+  const [isLit, setLit] = useState(6);
+
+  const addClick = async () => {
+
+    await setLit(isLit + 1)
+
+    console.log(isLit)
+
+  }
+  const subClick = () => {
+
+    // setLit("waseem")
+    setLit(isLit - 1)
+
+  }
+
+  return (
+    <div className="main-div">
+      <button className="" onClick={subClick}> Click Me
+      </button>
+      <p>{isLit}</p>
+      <button onClick={addClick}> Click Me
+      </button>
+    </div>
+  );
+
+
 }
 
 
-ReactDOM.render(<State />, document.querySelector("#root"))
+ReactDOM.render(<Counter />, document.querySelector("#root"))
+
+
+function Room({ myClass }) {
+  const [isLit, setLit] = React.useState(true);
+
+
+  return (
+    <div className={`room ${isLit ? "lit" : "dark"}`}>
+      the room is
+      <br />
+      <button onClick={() => setLit(!isLit)}>
+        flip
+      </button>
+    </div>
+
+  );
+}
+
+ReactDOM.render(<Room />, document.querySelector("#root"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function Card({ imti, children }) {
+//   return (
+//     <div className="card">
+//       <img src={imti} alt="" />
+//       {children}
+//     </div>
+//   );
+// }
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <Card imti={imti}>
+//         <p>hello bhai kaise ho</p>
+//       </Card>
+//       <p>me app wala children props ho</p>
+//     </div>
+//   );
+// }
+
+// ReactDOM.render(
+//   <App />,
+//   document.querySelector("#root"))
