@@ -63,3 +63,18 @@
 
 
 // addFunc()
+
+const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+for (let i = 0; i < 7; i++) {
+    const date = new Date();
+    // console.log(date.getDate())
+    date.setDate(date.getDate() + i);
+    console.log(date)
+    date.setDate(date.getDate() + i); // Current date + i days
+
+    const dayIndex = date.getDay(); // Get the day index (0 for Sunday, 1 for Monday, etc.)
+    const dayName = daysOfWeek[dayIndex]; // Get the day name from the array
+
+    console.log(`Day ${i + 1}: ${dayName}`);
+}
